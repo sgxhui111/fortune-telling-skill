@@ -4,6 +4,8 @@
 
 Tarot is a symbolic mirror. Cards do not prove the future; they organize attention, tension, choice, and timing.
 
+For a more immersive reading, pair this file with `tarot-ritual.md`. Use the ritual process when the user asks for "真实一点", "完整塔罗过程", "洗牌切牌", "像线下塔罗一样", or when the session would benefit from ceremony.
+
 ## Spreads
 
 Single card:
@@ -36,10 +38,11 @@ Upright often shows clear expression of the card. Reversed often shows delay, bl
 ## Reading method
 
 1. Name the spread and positions.
-2. For each card, give keywords and a direct interpretation tied to the user's question.
-3. Look for repeated suits, numbers, court cards, and major arcana.
-4. Synthesize the story. Avoid listing card meanings without integration.
-5. End with one practical action or reflection question per important card.
+2. If using ritual mode, narrate shuffle, cut, layout, and reveal sequence before the interpretations.
+3. For each card, give keywords and a direct interpretation tied to the user's question.
+4. Look for repeated suits, numbers, court cards, and major arcana.
+5. Synthesize the story. Avoid listing card meanings without integration.
+6. End with one practical action or reflection question per important card.
 
 ## Suit themes
 

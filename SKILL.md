@@ -26,6 +26,7 @@ Use this skill to host an immersive, culturally aware, entertainment-first fortu
    - Session design and dialogue: `references/session-design.md`
    - Bazi and five elements: `references/bazi-wuxing.md`
    - Tarot: `references/tarot.md`
+   - Realistic tarot ritual flow: `references/tarot-ritual.md`
    - Astrology: `references/astrology.md`
    - Yearly/career/love/wealth topics: `references/fortune-topics.md`
    - Image/video readings: `references/multimedia-reading.md`
@@ -54,11 +55,17 @@ python scripts/wuxing_balance.py "甲子 丙寅 辛巳 壬辰"
 
 ### Tarot
 
-Ask for the question and spread preference. If the user does not choose cards, use `scripts/draw_tarot.py` for a reproducible draw:
+Ask for the question and spread preference. If the user does not choose cards, use `scripts/draw_tarot.py` for a reproducible draw. For a more realistic session, use the ritual mode so the answer includes question-setting, shuffle, three-pile cut, spread layout, and card reveal order:
 
 ```bash
 python scripts/draw_tarot.py --spread three-card --question "我接下来三个月的事业状态如何？"
 ```
+
+```bash
+python scripts/draw_tarot.py --ritual --spread three-card --format markdown --question "我接下来三个月的事业状态如何？"
+```
+
+When using ritual mode, narrate the process briefly before interpretation: focus the question, shuffle the 78-card deck, cut into three piles, lay the spread, reveal cards one by one, then synthesize the story.
 
 ### Astrology
 

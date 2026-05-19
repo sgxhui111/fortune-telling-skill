@@ -1,5 +1,7 @@
 # Fortune Telling Skill / 灵感算命师
 
+![Fortune Telling Skill cover](assets/README-cover.svg)
+
 一个面向 Codex 的娱乐性命理与象征解读 skill，把八字、五行、塔罗、星座、流年主题和图片/视频取象结合成一次更有仪式感的对话体验。
 
 它不是用来“证明命运”的工具，而是把民俗语言、牌面象征、元素意象和用户提供的生活处境组织成一面镜子：帮助用户看见当下的主题、情绪、选择和可能的行动方向。
@@ -15,7 +17,7 @@
   基于用户提供的出生信息或四柱，做五行倾向、元素流动、优势与卡点的象征性分析。
 
 - **塔罗牌解读**  
-  支持单张牌、三张牌、关系牌阵、岔路牌阵、凯尔特十字等形式，并内置可复现的抽牌脚本。
+  支持单张牌、三张牌、关系牌阵、岔路牌阵、凯尔特十字等形式，并内置可复现的抽牌脚本。现在也支持更接近真实塔罗会话的流程：定问题、洗牌、切牌、发牌、逐张翻牌和综合解读。
 
 - **星座 / 占星风格分析**  
   支持太阳星座轻量解读，也可以基于用户提供的星盘配置做更细的性格、关系和阶段主题分析。
@@ -101,6 +103,12 @@ C:\Users\Administrator\.codex\skills\fortune-telling
 我想看我和对方现在的关系动态，以及接下来该怎么沟通。
 ```
 
+```text
+用 $fortune-telling 做一次完整塔罗流程。
+请模拟洗牌、切牌、发牌和逐张翻牌。
+问题：未来三个月我的事业重点是什么？
+```
+
 ### 星座 / 占星
 
 ```text
@@ -161,6 +169,24 @@ C:\Users\Administrator\.codex\skills\fortune-telling
 
 ---
 
+## 塔罗流程展示
+
+![Tarot ritual flow](assets/tarot-ritual-flow.svg)
+
+完整塔罗模式会把一次读取拆成更有真实感的步骤：
+
+1. **定问题**：把用户的问题收束成一句可读取的问题。
+2. **洗牌**：模拟 78 张牌的多轮洗牌，作为注意力聚焦的仪式。
+3. **切牌**：切成三叠，再按脚本生成的顺序重新合牌。
+4. **发牌**：按照单张、三张、关系、岔路或凯尔特十字牌阵摆放。
+5. **翻牌**：逐张揭示牌面，再把所有牌合成一个完整故事。
+
+![Three-card tarot spread](assets/three-card-spread.svg)
+
+三张牌模式适合快速看一个问题的变化线：过去/根源、现在/挑战、未来趋势/建议。
+
+---
+
 ## 内置脚本
 
 ### Tarot draw
@@ -169,6 +195,12 @@ C:\Users\Administrator\.codex\skills\fortune-telling
 
 ```bash
 python scripts/draw_tarot.py --spread three-card --question "我接下来三个月的事业状态如何？"
+```
+
+也可以用完整仪式模式输出 Markdown：
+
+```bash
+python scripts/draw_tarot.py --ritual --spread three-card --format markdown --question "我接下来三个月的事业状态如何？"
 ```
 
 支持的牌阵包括：
@@ -201,7 +233,10 @@ fortune-telling/
 ├── agents/
 │   └── openai.yaml                  # UI 展示信息
 ├── assets/
-│   └── oracle-icon.svg              # skill 图标
+│   ├── README-cover.svg             # README 封面图
+│   ├── oracle-icon.svg              # skill 图标
+│   ├── tarot-ritual-flow.svg        # 塔罗流程展示图
+│   └── three-card-spread.svg        # 三张牌牌阵展示图
 ├── references/
 │   ├── astrology.md                 # 占星解读边界与基础语言
 │   ├── bazi-wuxing.md               # 八字、天干地支、五行参考
@@ -210,6 +245,7 @@ fortune-telling/
 │   ├── response-patterns.md         # 输出模板
 │   ├── safety-and-ethics.md         # 安全边界与隐私规则
 │   ├── session-design.md            # 对话流程和仪式感设计
+│   ├── tarot-ritual.md              # 洗牌、切牌、发牌、翻牌流程
 │   └── tarot.md                     # 塔罗牌阵与牌义参考
 └── scripts/
     ├── draw_tarot.py                # 塔罗抽牌脚本
