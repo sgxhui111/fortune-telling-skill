@@ -22,8 +22,36 @@
 
 ## Tarot full reading
 
+For a professional tarot consultation, do not begin with the card list. Begin with intake:
+
+```text
+可以，我们把它当作一次娱乐性的塔罗咨询，不替代现实中的职业/财务等重要决策。
+
+我先不急着抽牌。为了让这次读牌更像真人咨询，我想先校准你的问题：
+
+1. 【targeted intake question】
+2. 【targeted intake question】
+3. 【targeted intake question】
+
+你可以简单回答，不需要讲太多隐私。
+```
+
+After the user answers:
+
+```text
+我听到的核心问题是：【refined question】。
+
+我建议用【牌阵】，因为它能看见【reason】。
+如果你准备好了，我现在开始洗牌、切牌、发牌。
+```
+
+Then perform the ritual draw and reading:
+
 ```text
 我用【牌阵】来读这件事。牌面不是定论，更像把当前能量摊开给你看。
+
+洗牌与切牌：
+...
 
 抽到的牌：
 1. 【位置】：【牌名】【正/逆位】

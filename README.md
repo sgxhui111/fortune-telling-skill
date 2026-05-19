@@ -9,6 +9,8 @@
 > For entertainment, folklore-inspired reflection, and creative conversation only.  
 > 不替代医学、法律、财务、安全、心理健康等重大决策中的专业建议。
 
+![Animated tarot shuffle](assets/tarot-shuffle-animation.svg)
+
 ---
 
 ## 它能做什么
@@ -28,8 +30,11 @@
 - **图片 / 视频 / 空间 / 物件取象**  
   可以根据用户上传的图片、视频关键帧、房间、桌面、物件、穿搭或截图进行象征性解读。
 
+- **沉浸式测试与展示**  
+  用户可以附上图片、短视频、截图、动画或氛围图，让 skill 先按画面取象，再像真人咨询一样追问、定问题、洗牌、切牌和解读。
+
 - **对话式算命体验**  
-  它会先确认问题和方法，再分层解读，不会一上来让用户填一大张表。
+  它会像真人咨询一样先校准问题、了解背景、推荐牌阵或解读方法，再进入洗牌、切牌、发牌和分层解读。
 
 ---
 
@@ -105,7 +110,7 @@ C:\Users\Administrator\.codex\skills\fortune-telling
 
 ```text
 用 $fortune-telling 做一次完整塔罗流程。
-请模拟洗牌、切牌、发牌和逐张翻牌。
+请像真人塔罗咨询一样，先问我几个问题，再模拟洗牌、切牌、发牌和逐张翻牌。
 问题：未来三个月我的事业重点是什么？
 ```
 
@@ -145,6 +150,18 @@ C:\Users\Administrator\.codex\skills\fortune-telling
 
 图片和视频解读会聚焦颜色、光线、构图、物件、动作、空间感和用户提供的背景，不会从外貌里推断健康、寿命、身份、财富或其他敏感信息。
 
+### 沉浸式测试
+
+```text
+用 $fortune-telling 做一次沉浸式塔罗测试。
+我会上传一张桌面照片，请你先按画面取象，再像真人咨询一样问我问题，最后洗牌切牌抽牌。
+```
+
+```text
+用 $fortune-telling 做一次带动画氛围的塔罗演示。
+请用洗牌动画的感觉开场，先问我问题，不要直接抽牌。
+```
+
 ---
 
 ## 体验风格
@@ -154,6 +171,7 @@ C:\Users\Administrator\.codex\skills\fortune-telling
 它会：
 
 - 先定边界：这是娱乐性、民俗性、象征性的解读
+- 像真人咨询一样先校准问题，而不是直接给结论
 - 根据问题选择方法：八字、五行、塔罗、占星、取象或混合解读
 - 只追问必要信息，不把用户困在长表格里
 - 用具体画面和象征语言建立沉浸感
@@ -184,6 +202,23 @@ C:\Users\Administrator\.codex\skills\fortune-telling
 ![Three-card tarot spread](assets/three-card-spread.svg)
 
 三张牌模式适合快速看一个问题的变化线：过去/根源、现在/挑战、未来趋势/建议。
+
+---
+
+## 沉浸式视觉模式
+
+![Immersive visual reading table](assets/immersive-reading-table.svg)
+
+测试这个 skill 时，可以把图片、短视频或动画当作“桌面”和“氛围”来使用。它会先观察画面里的非敏感信息，例如颜色、光线、构图、物件、方向感和重复元素，再把这些内容作为象征锚点。
+
+适合用来测试的素材：
+
+- 一张桌面、房间、书桌、手账、牌桌或空间照片
+- 一段短视频，或从视频里截出的 2-4 张关键帧
+- 一张 mood board、穿搭图、物件图、截图
+- README 里的 `assets/tarot-shuffle-animation.svg` 动画图
+
+重要边界：图片和视频只用于氛围和象征解读，不用于判断身份、健康、寿命、财富、心理诊断或其他敏感信息。
 
 ---
 
@@ -234,13 +269,16 @@ fortune-telling/
 │   └── openai.yaml                  # UI 展示信息
 ├── assets/
 │   ├── README-cover.svg             # README 封面图
+│   ├── immersive-reading-table.svg  # 图片/动画沉浸测试展示图
 │   ├── oracle-icon.svg              # skill 图标
+│   ├── tarot-shuffle-animation.svg  # 动态洗牌展示图
 │   ├── tarot-ritual-flow.svg        # 塔罗流程展示图
 │   └── three-card-spread.svg        # 三张牌牌阵展示图
 ├── references/
 │   ├── astrology.md                 # 占星解读边界与基础语言
 │   ├── bazi-wuxing.md               # 八字、天干地支、五行参考
 │   ├── fortune-topics.md            # 流年、事业、感情、财运主题结构
+│   ├── immersive-testing.md         # 沉浸式图片/动画测试流程
 │   ├── multimedia-reading.md        # 图片/视频取象规则
 │   ├── response-patterns.md         # 输出模板
 │   ├── safety-and-ethics.md         # 安全边界与隐私规则

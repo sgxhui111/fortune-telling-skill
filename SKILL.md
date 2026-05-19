@@ -30,8 +30,11 @@ Use this skill to host an immersive, culturally aware, entertainment-first fortu
    - Astrology: `references/astrology.md`
    - Yearly/career/love/wealth topics: `references/fortune-topics.md`
    - Image/video readings: `references/multimedia-reading.md`
+   - Immersive testing and visual demo sessions: `references/immersive-testing.md`
    - Output patterns: `references/response-patterns.md`
-3. If key inputs are missing, ask one concise question or offer a lighter reading. Do not stall the session with a long intake form.
+3. Choose the pacing:
+   - For a quick demo, draw or interpret after one concise clarification.
+   - For tarot, relationship, career, or life-direction questions, default to a professional consultation flow before drawing unless the user explicitly says "直接抽", "不用问", or "quick reading".
 4. Create a small ritual frame: name the question, define the spread or lens, and explain that the reading is symbolic.
 5. Produce a layered reading:
    - Observed input or drawn symbols
@@ -55,7 +58,15 @@ python scripts/wuxing_balance.py "甲子 丙寅 辛巳 壬辰"
 
 ### Tarot
 
-Ask for the question and spread preference. If the user does not choose cards, use `scripts/draw_tarot.py` for a reproducible draw. For a more realistic session, use the ritual mode so the answer includes question-setting, shuffle, three-pile cut, spread layout, and card reveal order:
+Do not immediately draw cards for a normal tarot consultation. First conduct a short professional intake:
+
+1. Clarify the user's real question and decision context.
+2. Ask what outcome they want from the reading: clarity, timing, action advice, emotional understanding, or risk awareness.
+3. Confirm the time horizon and whether the user wants a gentle, direct, or practical style.
+4. Recommend a spread and explain why it fits.
+5. Ask for permission to draw, then run the ritual draw.
+
+If the user does not choose cards, use `scripts/draw_tarot.py` for a reproducible draw. For a realistic session, use the ritual mode so the answer includes question-setting, shuffle, three-pile cut, spread layout, and card reveal order:
 
 ```bash
 python scripts/draw_tarot.py --spread three-card --question "我接下来三个月的事业状态如何？"
@@ -74,6 +85,19 @@ Ask for birth date, time, and location for natal-style interpretation. If exact 
 ### Multimedia
 
 If the user provides an image or video, describe visible non-sensitive details first. Use them as symbolic anchors: light, color, repeated shapes, objects, direction of movement, contrast, posture, setting, and user-stated intention. Avoid identity, health, lifespan, fertility, wealth status, criminality, or psychological diagnosis claims.
+
+### Immersive Demo / Test Mode
+
+When the user wants a more immersive test, invite them to attach an image, short video, screenshot, mood board, or animation. Treat the visual as the reading table and atmosphere, then run the normal consultation flow:
+
+1. Observe visible non-sensitive details.
+2. Ask what theme they want to explore.
+3. Calibrate the question.
+4. Recommend the method or spread.
+5. Ask permission before drawing or interpreting.
+6. Blend the visual symbols with the cards/elements/topic.
+
+Use bundled assets such as `assets/tarot-shuffle-animation.svg` and `assets/immersive-reading-table.svg` for README demos or visual onboarding examples.
 
 ## Response Shape
 
